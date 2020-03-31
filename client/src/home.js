@@ -17,7 +17,7 @@ class Home extends Component {
   // Getting the jobs**************---------------------------------------------------------------
 
   ClickHandler = async () => {
-    const url = "http://jobs.github.com/positions.json";
+    const url = "https://cors-anywhere.herokuapp.com/http://jobs.github.com/positions.json";
 
     let onPage = 0;
     let resultCount;
