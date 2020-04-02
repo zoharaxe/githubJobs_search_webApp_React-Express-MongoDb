@@ -23,6 +23,7 @@ class App extends Component {
 				<Navbar.Brand >
           <Link className="navbar-brand" to="/">
               <img
+                role='logo'
                 alt=""
                 src={logo}
                 width='auto'
