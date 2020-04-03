@@ -52,9 +52,10 @@ export default function Login() {
           />
         </DialogContent>
         <DialogActions>
-          <span style={{ color: "red", fontSize: "11px", margin:"auto" }}>
-            * if you have not registered yet click to <Register/>
-          </span>
+        <span style={{position:"relative", left:"-37%"}}><Register/></span>
+          {/* <span style={{ color: "red", fontSize: "11px", margin:"auto" }}>
+            * if you have not registered yet click to
+          </span> */}
 
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose} variant="contained" color="secondary">

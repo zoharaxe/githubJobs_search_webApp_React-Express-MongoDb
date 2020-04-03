@@ -20,7 +20,7 @@ export default function Register() {
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <Button size="small" variant="outlined" color="primary" onClick={handleClickOpen}>
       Register
       </Button>
       <Dialog
@@ -51,9 +51,9 @@ export default function Register() {
           />
         </DialogContent>
         <DialogActions>
-          <span style={{ color: "red", fontSize: "11px", margin:"auto" }}>
+          {/* <span style={{ color: "red", fontSize: "11px", margin:"auto" }}>
             * if you already have an account click here
-          </span>
+          </span> */}
 
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose} variant="contained" color="secondary">
