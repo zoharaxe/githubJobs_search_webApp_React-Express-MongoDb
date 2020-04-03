@@ -50,9 +50,10 @@ class App extends Component {
                   <Link to="/SavedJobs">Your Saved Jobs</Link>
                 </Nav.Link>
               </Nav>
-              <Nav.Link>
+              <Login />
+              {/* <Nav.Link>
                 <Link to="/Login">Login</Link>
-              </Nav.Link>
+              </Nav.Link> */}
               <NavDropdown title="" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
@@ -80,8 +81,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => <Home />} />
             <Route exact path="/SavedJobs" render={() => <SavedJobs />} />
-            <Route exact path="/Login" render={() => <Login />} />
-            <Route exact path="/register" render={() => <Register />} />
+            {/* <Route exact path="/Login" render={() => <Login />} /> */}
+            {/* <Route exact path="/register" render={() => <Register />} /> */}
 
             {/*
             <Route exact path="/AddPerson" render={() => <AddPerson addPerson={this.addPerson} />} />
