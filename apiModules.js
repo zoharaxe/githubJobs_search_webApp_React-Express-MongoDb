@@ -6,7 +6,42 @@ const multer = require("multer");
 const uploadDirectory = "cv/";
 const upload = multer({ dest: uploadDirectory });
 
+function login(req, res) {
+  console.log("/users/login is accessed");
+
+  MongoClient.connect(dbUrl, function(err, db) {
+    if (err) {
+      console.log(err);
+      return res.sendStatus(500);
+    }
+
+    const queryUser = req.body;
+    const dbo = db.db(my_db);
+
+    dbo
+      .collection("users")
+      .findOne(queryUser, function(err, userFound) {
+        if (err) {
+          console.log(err);
+          return res.sendStatus(500);
+        }
+
+        if (userFound) {
+          //-- email+password found
+          return res.sendStatus(200);
+        }
+
+        //-- user not found 
+          res.sendStatus(404);
+        
+        db.close();
+      });
+  });
+}
+
 function register(req, res) {
+  console.log("/users/register is accessed");
+
   MongoClient.connect(dbUrl, function(err, db) {
     if (err) {
       console.log(err);
@@ -133,3 +168,4 @@ function saveJob(req, res) {
 module.exports.register = register;
 module.exports.getSavedJobs = getSavedJobs;
 module.exports.saveJob = saveJob;
+module.exports.login = login;

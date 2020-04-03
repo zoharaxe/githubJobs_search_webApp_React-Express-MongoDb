@@ -4,6 +4,10 @@ const app = express();
 app.use(express.json());
 const apiModules = require("./apiModules");
 
+app.post("/users/login", (req, res) => {
+  apiModules.login(req, res);
+});
+
 app.post("/users/register", (req, res) => {
   apiModules.register(req, res);
 });
